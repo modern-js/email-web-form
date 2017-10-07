@@ -10,4 +10,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Listen for requests
 const server = app.listen(app.get('port'), function() {
   const port = server.address().port;
+  console.log('Listening on port ' + port);
 });

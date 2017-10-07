@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/modern-js/email-web-form/issues"
   },
-  "homepage": "https://github.com/modern-js/email-web-form#readme"
+  "homepage": "https://github.com/modern-js/email-web-form#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  }
 }
