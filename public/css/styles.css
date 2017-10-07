@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'mrrobotregular';
     src: url('../fonts/mrrobot-webfont.woff2') format('woff2'), url('../fonts/mrrobot-webfont.woff') format('woff');
@@ -43,6 +42,14 @@ nav .brand-logo{
     max-width: 100%;
     height: auto;
 }
+
+.form-row .col.s12{
+    text-align: center;
+}
+
+/* .input-field.col label{
+    left:-2.5rem;
+} */
 
 .page-footer{
     left:0px;
