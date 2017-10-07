@@ -1,3 +1,11 @@
+
+@font-face {
+    font-family: 'mrrobotregular';
+    src: url('../fonts/mrrobot-webfont.woff2') format('woff2'), url('../fonts/mrrobot-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 nav{
     background-color: #1b95e0;
 }
@@ -6,13 +14,40 @@ nav .brand-logo{
     padding:0.5rem;
 }
 
+.col.s12.cover{
+    position: relative;
+    display: inline-block;
+}
 
+.text-box {
+    position: absolute;    
+    height: 100%;
+    text-align: center;    
+    width: 100%;
+}
+.text-box:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+ }
+ .cover-title{
+    display: inline-block;
+    color: #17447b;
+    text-shadow: 1.0px 1.0px 1.0px white;
+    font-family: 'mrrobotregular';
+}
+
+.cover-img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 .page-footer{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    left:0px;
+    bottom:0px;
+    right: 0px;
     padding-top: 0;
     background-color: #1b95e0;
     text-align: center;
