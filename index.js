@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-
-
+const { Client } = require('pg');
 const bodyParser = require('body-parser');
 
 const app = express();
-
+const client = new Client();
+client.connect();
 
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
@@ -24,7 +24,7 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Listening on port ${port}`);
 });
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
   console.log('log');
   const { name, email, vcsAcc } = req.body;
   console.log(`Name: ${name} Email: ${email} vcsAcc: ${vcsAcc}`);
@@ -32,4 +32,8 @@ app.post('/', (req, res) => {
     if (err) throw err;
     console.log('Saved!');
   });
+
+  const response = await client.query('INSERT INTO newsletter VALUES ($1, $2, $3)', [email, name, vcsAcc]);
+  console.log(response);
+  res.send({ status: 'success' });
 });
